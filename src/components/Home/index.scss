@@ -1,0 +1,188 @@
+@import "../../App.scss";
+
+.section-heading {
+  color: $spicy_color;
+}
+@media all and (min-width: 900px) {
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .section-sub-heading {
+    font-size: 30px;
+    width: 315px;
+  }
+}
+
+.home-main-container {
+  padding: 60px 20px 0 20px;
+  font-family: $primary_font;
+  .home-banner-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    .banner-section-content {
+      width: 500px;
+      .text-highlight {
+        color: $carvings_color;
+        margin-left: 10px;
+      }
+      .banner-section-description {
+        margin-bottom: 25px;
+      }
+    }
+    .banner-image {
+      display: none;
+    }
+    @media all and (min-width: 600px) {
+      .banner-image {
+        display: block;
+        width: 45%;
+        padding-top: 20px;
+      }
+    }
+  }
+  .customer-favorites-section {
+    .fav-item-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .fav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 25px;
+        justify-content: space-between;
+        .item-img-bg {
+          background-color: $carvings_color;
+          border-radius: 50px;
+          height: 120px;
+          width: 150px;
+        }
+        @media all and (min-width: 900px) {
+          .item-img-bg {
+            height: 150px;
+            width: 200px;
+          }
+          .fav-item-names {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    @media all and (min-width: 900px) {
+      .fav-item-list {
+        justify-content: space-between;
+      }
+    }
+  }
+  .testimonials-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .our-best-cheif {
+      display: none;
+    }
+    @media all and (min-width: 900px) {
+      .our-best-cheif {
+        display: inline;
+        width: 450px;
+      }
+    }
+    .customer-feedback-content-container {
+      @media all and (min-width: 900px) {
+        .customer-feedback {
+          width: 350px;
+        }
+      }
+      .customer-feedback-container {
+        display: flex;
+        align-items: center;
+        .customer-feedback-heading {
+          margin: 0;
+          font-size: 18px;
+        }
+        .feedback-detail-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .customer-rating {
+            margin: 0;
+          }
+          .rating-count {
+            margin: 0;
+            font-size: 15px;
+            color: #686868;
+          }
+        }
+      }
+    }
+  }
+  .service-section {
+    .service-content-description {
+      margin-bottom: 40px;
+    }
+    @media all and (min-width: 900px) {
+      .service-section-main-content {
+        width: 320px;
+      }
+    }
+
+    .serivce-list {
+      margin-top: 30px;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .service-items {
+        padding: 10px;
+        color: $theme_color;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        width: 240px;
+        border-radius: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+        margin-right: 15px;
+        .service-heading {
+          margin: 0;
+          font-size: 20px;
+        }
+        .service-description {
+          margin: 0;
+        }
+      }
+    }
+
+    @media all and (min-width: 900px) {
+      .serivce-list {
+        min-width: 550px;
+        max-width: 600px;
+      }
+    }
+  }
+  @media all and (min-width: 900px) {
+    .service-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media all and (min-width: 500px) {
+  .home-main-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media all and (min-width: 900px) {
+  .home-main-container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}

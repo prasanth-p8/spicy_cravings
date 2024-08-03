@@ -1,0 +1,51 @@
+@import "../../App.scss";
+
+.footer-main-container {
+  font-family: $primary_font;
+  padding: 20px;
+  .footer-list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .footer-nav-list {
+      display: flex;
+      flex-direction: column;
+      width: 130px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      .footer-social-media-container {
+        display: flex;
+        align-items: center;
+        .footer-icons {
+          margin-right: 15px;
+        }
+      }
+    }
+    .footer-conclusion {
+      width: 225px;
+    }
+  }
+  @media all and (min-width: 900px) {
+    .footer-list {
+      justify-content: space-around;
+    }
+  }
+  .copyright-footer {
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 500px) {
+  .footer-main-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media all and (min-width: 900px) {
+  .footer-main-container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}

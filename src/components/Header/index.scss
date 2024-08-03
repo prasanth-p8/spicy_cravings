@@ -1,0 +1,122 @@
+@import "../../App.scss";
+
+.header-main-container {
+  position: fixed;
+  font-family: $primary_font;
+  right: 0;
+  left: 0;
+  padding: 10px 20px;
+  background-color: $logo_bg_color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    .location-select-container {
+      display: flex;
+      align-items: center;
+      .location-drop-down-list {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-family: $primary_font;
+        outline: none;
+        cursor: pointer;
+        margin-right: 10px;
+        .options-list {
+          color: #000;
+        }
+      }
+    }
+    @media all and (min-width: 900px) {
+      .show-hamburger {
+        display: none;
+      }
+    }
+    .nav-bar-desktop {
+      display: none;
+    }
+    @media all and (min-width: 900px) {
+      .nav-bar-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 350px;
+
+        .desktop-nav-items {
+          color: #fff;
+        }
+        .desktop-nav-items:hover {
+          color: $spicy_color;
+          text-decoration: underline;
+        }
+        .avatar-navbar-icon {
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-container {
+  background-color: $spicy_color;
+  width: 250px;
+  height: 100%;
+  left: -300px;
+  top: 68px;
+  position: fixed;
+  padding: 15px;
+  text-align: right;
+  transition: left 1s ease-in-out;
+  font-family: $primary_font;
+  .close-button {
+    font-size: 20px;
+    color: $carvings_color;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .sidebar-user-container {
+    text-align: center;
+    .sidebar-avatar {
+      width: 50px;
+      text-align: center;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .sidebar-menu-items {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    height: 250px;
+    justify-content: space-between;
+    .sidebar-item {
+      color: #fff;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      .sidebar-menu-content {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.show-sidebar {
+  left: 0;
+}
+
+@media all and (min-width: 500px) {
+  .sidebar-container {
+    top: 78px;
+  }
+}
+
+@media all and (min-width: 900px) {
+  .sidebar-container {
+    display: none;
+  }
+}
