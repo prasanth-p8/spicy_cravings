@@ -3,7 +3,7 @@ import { BsFillMenuButtonWideFill, BsCartCheck } from "react-icons/bs";
 import { FaHamburger, FaHome, FaHistory } from "react-icons/fa";
 import { FaPeopleGroup, FaRegCircleUser } from "react-icons/fa6";
 import { ImLocation2 } from "react-icons/im";
-import { IoCloseCircleSharp } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 import "./index.scss";
@@ -52,12 +52,18 @@ const locationList = [
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [headerLocation, setHeaderLocation] = useState(locationList[0].name);
 
   const openSidebar = () => {
     setShowSidebar(!showSidebar);
   };
 
-  console.log(showSidebar);
+  const userDetails = JSON.parse(localStorage.getItem("user_details"));
+  const { gender, username } = userDetails;
+  const profileAvatar =
+    gender === "male"
+      ? "https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/woman_1_nwpblz.png"
+      : "https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/boy_1_oxbcrg.png";
 
   return (
     <header>
@@ -77,7 +83,8 @@ const Header = () => {
                 <option
                   className="options-list"
                   key={location.id}
-                  value={location.name}
+                  value={headerLocation}
+                  onChange={(e) => setHeaderLocation(e.target.value)}
                 >
                   {location.name}
                 </option>
@@ -108,7 +115,7 @@ const Header = () => {
             </Link>
             <Link to="/profile">
               <img
-                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/boy_1_oxbcrg.png"
+                src={profileAvatar}
                 alt="avatar-icon"
                 className="avatar-navbar-icon"
               />
@@ -117,29 +124,25 @@ const Header = () => {
         </nav>
       </div>
       <div className={`sidebar-container ${showSidebar ? "show-sidebar" : ""}`}>
-        <IoCloseCircleSharp className="close-button" onClick={openSidebar} />
+        <IoMdClose className="close-button" onClick={openSidebar} />
         <div className="sidebar-user-container">
           <img
-            src="https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/boy_1_oxbcrg.png"
+            src={profileAvatar}
             alt="avatar-icon"
             className="sidebar-avatar"
           />
-          <p>User</p>
+          <p>{username[0].toUpperCase() + username.slice(1)}</p>
         </div>
         <ul className="sidebar-menu-items">
           <Link to="/" className="sidebar-item">
             <FaHome size={25} />
             <p className="sidebar-menu-content">Home</p>
           </Link>
-
           <Link to="/menu" className="sidebar-item">
             <BsFillMenuButtonWideFill size={25} />
             <p className="sidebar-menu-content">Menu</p>
           </Link>
-          <Link to="/about" className="sidebar-item">
-            <FaPeopleGroup size={25} />
-            <p className="sidebar-menu-content">About us</p>
-          </Link>
+
           <Link to="/cart" className="sidebar-item">
             <BsCartCheck size={25} />
             <p className="sidebar-menu-content">Cart</p>
@@ -147,6 +150,10 @@ const Header = () => {
           <Link to="/order-history" className="sidebar-item">
             <FaHistory size={25} />
             <p className="sidebar-menu-content">Order History</p>
+          </Link>
+          <Link to="/about" className="sidebar-item">
+            <FaPeopleGroup size={25} />
+            <p className="sidebar-menu-content">About us</p>
           </Link>
           <Link to="/profile" className="sidebar-item">
             <FaRegCircleUser size={25} />

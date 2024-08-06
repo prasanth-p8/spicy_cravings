@@ -30,6 +30,7 @@ function Home() {
 
     const jwtToken = Cookies.get("jwt_token");
     const url = "https://spicy-carvings-backend.onrender.com";
+
     const options = {
       method: "GET",
       headers: {
@@ -38,9 +39,10 @@ function Home() {
     };
 
     const response = await fetch(url, options);
+
     if (response.ok) {
-      const responseData = await response.text();
-      console.log(responseData);
+      const responseData = await response.json();
+
       setApiStatus({
         status: apiConstants.success,
         data: responseData,
@@ -59,6 +61,9 @@ function Home() {
   }, []);
 
   const renderSuccessView = () => {
+    const { data } = apiStatus;
+
+    localStorage.setItem("user_details", JSON.stringify(data));
     return (
       <>
         <Header />

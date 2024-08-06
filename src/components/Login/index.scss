@@ -2,7 +2,7 @@
 
 .login-main-container {
   background-image: url("../../../public/Assets/Images/Background/login-background-image.png");
-  min-height: 100vh;
+  min-height: 90vh;
   background-size: cover;
   padding: 20px;
   display: flex;
@@ -47,12 +47,12 @@
     }
     @media all and (min-width: 500px) {
       .welcome-back {
-        font-size: 34px;
+        font-size: 28px;
       }
     }
     @media all and (min-width: 900px) {
       .welcome-back {
-        font-size: 38px;
+        font-size: 32px;
       }
     }
     .form-container {
@@ -64,6 +64,35 @@
         flex-direction: column;
         margin-bottom: 20px;
         font-family: $input_font;
+
+        .password-container {
+          display: flex;
+          align-items: center;
+          background-color: #fff;
+          padding-right: 10px;
+          border-radius: 5px;
+          .user-input {
+            width: 100%;
+          }
+          .show-password-icon-button {
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            height: 25px;
+          }
+        }
+        @media all and (min-width: 500px) {
+          .password-container {
+            padding-right: 12px;
+          }
+        }
+        @media all and (min-width: 900px) {
+          .password-container {
+            padding-right: 14px;
+          }
+        }
         .input-label {
           font-size: 20px;
           font-weight: 700;
@@ -72,12 +101,12 @@
         }
         @media all and (min-width: 500px) {
           .input-label {
-            font-size: 24px;
+            font-size: 22px;
           }
         }
         @media all and (min-width: 900px) {
           .input-label {
-            font-size: 28px;
+            font-size: 24px;
           }
         }
         .user-input {
@@ -92,13 +121,13 @@
         }
         @media all and (min-width: 500px) {
           .user-input {
-            padding: 15px;
+            padding: 12px;
             font-size: 18px;
           }
         }
         @media all and (min-width: 900px) {
           .user-input {
-            padding: 20px;
+            padding: 14px;
             font-size: 20px;
           }
         }
@@ -172,16 +201,28 @@
   }
   @media all and (min-width: 500px) {
     .form-main-container {
-      min-width: 380px;
-      padding: 30px;
+      min-width: 350px;
+      padding: 20px;
       border-radius: 25px;
     }
   }
   @media all and (min-width: 900px) {
     .form-main-container {
-      min-width: 580px;
-      padding: 40px;
+      min-width: 400px;
+      padding: 30px;
       border-radius: 30px;
     }
+  }
+}
+
+@media all and (min-width: 500px) {
+  .login-main-container {
+    padding-bottom: 40px;
+  }
+}
+
+@media all and (min-width: 900px) {
+  .login-main-container {
+    padding-bottom: 60px;
   }
 }

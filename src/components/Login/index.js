@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import Cookies from "js-cookie";
+import { GoEye, GoEyeClosed } from "react-icons/go";
+
 import "./index.scss";
 
 function Login(props) {
@@ -9,6 +11,7 @@ function Login(props) {
   const [errMsgUsername, setErrMsgUsername] = useState(false);
   const [errMsgPassword, setErrMsgPassword] = useState(false);
   const [loginErrorMsg, setLoginErrorMsg] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const showErrorUsername = () => {
     if (username === "") {
@@ -68,6 +71,12 @@ function Login(props) {
     return <Redirect to="/" />;
   }
 
+  const passwordInputIcon = showPassword ? (
+    <GoEye size={25} />
+  ) : (
+    <GoEyeClosed size={25} />
+  );
+
   return (
     <section className="login-main-container">
       <div className="logo-container">
@@ -76,7 +85,7 @@ function Login(props) {
           alt="restaurant_logo"
           className="website-logo"
         />
-        <h1 className="website-name">Spicy Carvings</h1>
+        <h1 className="website-name">Spicy Cravings</h1>
       </div>
       <div className="form-main-container">
         <h1 className="welcome-back">Welcome Back...</h1>
@@ -86,6 +95,7 @@ function Login(props) {
             <input
               className="user-input"
               type="text"
+              value={username}
               placeholder="username"
               onChange={(e) => setUsername(e.target.value)}
               onBlur={showErrorUsername}
@@ -96,13 +106,23 @@ function Login(props) {
           </div>
           <div className="input-container">
             <label className="input-label">password</label>
-            <input
-              className="user-input"
-              type="password"
-              placeholder="password"
-              onChange={(e) => setPassword(e.target.value)}
-              onBlur={showErrorPassword}
-            />
+            <div className="password-container">
+              <input
+                className="user-input"
+                type={showPassword ? "text" : "password"}
+                placeholder="password"
+                onChange={(e) => setPassword(e.target.value)}
+                onBlur={showErrorPassword}
+                value={password}
+              />
+              <button
+                className="show-password-icon-button"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {passwordInputIcon}
+              </button>
+            </div>
+
             {errMsgPassword && (
               <p className="error-msg">*Enter your password</p>
             )}

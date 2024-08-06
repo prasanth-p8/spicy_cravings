@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { GoEye, GoEyeClosed } from "react-icons/go";
 import "./index.scss";
 
 function Register(props) {
@@ -14,6 +15,10 @@ function Register(props) {
   const [allFieldsNeeded, setAllFieldsNeeded] = useState(false);
   const [weakPassword, setWeakPassword] = useState(false);
   const [errMsg, setErrMsg] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  console.log(wrongPassword);
+  console.log(allFieldsNeeded);
 
   const registerUser = async (event) => {
     event.preventDefault();
@@ -72,11 +77,17 @@ function Register(props) {
     }
   };
 
+  const passwordInputIcon = showPassword ? (
+    <GoEye size={25} />
+  ) : (
+    <GoEyeClosed size={25} />
+  );
+
   return (
     <section className="register-main-container">
       <div className="logo-container">
         <img
-          src="https://res.cloudinary.com/dlefoxknm/image/upload/v1721980665/restaurant_logo_fvk2sq.jpg"
+          src="https://res.cloudinary.com/dlefoxknm/image/upload/v1722442571/restaurant_logo_spicy_craving_fsxrpn.jpg"
           alt="restaurant_logo"
           className="website-logo"
         />
@@ -125,17 +136,26 @@ function Register(props) {
             />
           </div>
           <div className="input-container">
-            <input
-              type="password"
-              className="user-input"
-              placeholder="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onBlur={checkPasswordStrength}
-            />
+            <div className="password-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                className="user-input"
+                placeholder="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onBlur={checkPasswordStrength}
+              />
+              <button
+                className="show-password-icon-button"
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {passwordInputIcon}
+              </button>
+            </div>
             {weakPassword && (
               <p className="display-errorMsg errMsg-bg">
-                *minimum 8 characters need to set a strong password!
+                *minimum 8 characters needed!
               </p>
             )}
             <input

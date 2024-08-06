@@ -44,7 +44,7 @@
         align-items: center;
         justify-content: space-between;
         width: 350px;
-
+        text-decoration: none;
         .desktop-nav-items {
           color: #fff;
         }
@@ -72,19 +72,22 @@
   transition: left 1s ease-in-out;
   font-family: $primary_font;
   .close-button {
-    font-size: 20px;
-    color: $carvings_color;
+    font-size: 30px;
+    color: $logo_bg_color;
     margin-right: 10px;
     margin-top: 10px;
   }
   .sidebar-user-container {
     text-align: center;
     .sidebar-avatar {
-      width: 50px;
+      width: 60px;
       text-align: center;
     }
     p {
       margin: 0;
+      font-family: $secondary_font;
+      font-size: 20px;
+      color: #fff;
     }
   }
   .sidebar-menu-items {
@@ -93,6 +96,7 @@
     padding-left: 0;
     height: 250px;
     justify-content: space-between;
+    text-decoration: none;
     .sidebar-item {
       color: #fff;
       padding: 5px;

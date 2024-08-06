@@ -1,0 +1,67 @@
+@import "../../App.scss";
+
+.popup-content {
+  width: 60%;
+  max-width: 400px;
+  height: 200px;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $primary_font;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  .logout-popup-container {
+    text-align: center;
+    .logout-popup-button {
+      display: flex;
+      justify-content: space-around;
+      .confirm-button {
+        background-color: #007fe7;
+        color: #ddd;
+      }
+      .cancel-button {
+        border: 1px solid #000;
+      }
+    }
+  }
+}
+
+.profile-main-contaier {
+  padding: 100px 20px 0 20px;
+  font-family: $primary_font;
+  .profile-user-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    .profile-avatar-icon {
+      width: 70px;
+      margin-right: 10px;
+    }
+    .profile-user-details {
+      font-weight: 600;
+    }
+  }
+  .logout-button-container {
+    text-align: center;
+    .logout-button {
+      background-color: $spicy_color;
+      color: #fff;
+      margin-top: 30px;
+    }
+  }
+}
+
+@media all and (min-width: 500px) {
+  .profile-main-contaier {
+    padding: 120px 40px 0 40px;
+  }
+}
+@media all and (min-width: 900px) {
+  .profile-main-contaier {
+    padding: 150px 60px 0 60px;
+  }
+}
