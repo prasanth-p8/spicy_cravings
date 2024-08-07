@@ -61,7 +61,7 @@ const Header = () => {
   const userDetails = JSON.parse(localStorage.getItem("user_details"));
   const { gender, username } = userDetails;
   const profileAvatar =
-    gender === "male"
+    gender === "female"
       ? "https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/woman_1_nwpblz.png"
       : "https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/boy_1_oxbcrg.png";
 

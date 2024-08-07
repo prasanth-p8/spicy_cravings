@@ -61,7 +61,7 @@ function Profile(props) {
     const { data } = apiStatus;
     const { username, firstname, lastname, email, gender } = data;
     const profileAvatar =
-      gender === "male"
+      gender === "female"
         ? "https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/woman_1_nwpblz.png"
         : "https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/boy_1_oxbcrg.png";
 

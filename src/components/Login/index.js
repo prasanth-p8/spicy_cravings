@@ -116,6 +116,7 @@ function Login(props) {
                 value={password}
               />
               <button
+                type="button"
                 className="show-password-icon-button"
                 onClick={() => setShowPassword(!showPassword)}
               >

@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   .nav-bar {
     display: flex;
@@ -71,6 +72,7 @@
   text-align: right;
   transition: left 1s ease-in-out;
   font-family: $primary_font;
+  z-index: 1;
   .close-button {
     font-size: 30px;
     color: $logo_bg_color;

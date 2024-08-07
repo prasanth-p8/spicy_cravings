@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import About from "./components/About";
+import Menu from "./components/Menu";
 import Profile from "./components/Profile";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/register" component={Register} />
       <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/about" component={About} />
+      <ProtectedRoute exact path="/menu" component={Menu} />
       <ProtectedRoute exact path="/profile" component={Profile} />
     </Switch>
   );
