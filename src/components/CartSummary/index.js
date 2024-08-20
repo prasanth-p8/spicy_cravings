@@ -32,7 +32,7 @@ function CartSummary() {
     itemName: item.item_name,
     price: item.price,
     foodLabel: item.food_label,
-    imgUrl: menu.img_url,
+    imgUrl: item.img_url,
   }));
 
   console.log(formattedCartItems);
