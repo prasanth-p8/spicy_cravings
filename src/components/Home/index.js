@@ -92,38 +92,38 @@ function Home() {
             <p className="section-heading">CUSTOMERS FAVORITES</p>
             <h1 className="section-sub-heading">Popular Catagories</h1>
             <ul className="fav-item-list">
-              <li className="fav-item">
+              <Link to="/menu" className="fav-item">
                 <img
                   src="https://res.cloudinary.com/dlefoxknm/image/upload/v1722365670/burger_j57cys.png"
                   alt="burger"
                   className="item-img-bg"
                 />
                 <p className="fav-item-names">Burger</p>
-              </li>
-              <li className="fav-item">
+              </Link>
+              <Link to="/menu" className="fav-item">
                 <img
                   src="https://res.cloudinary.com/dlefoxknm/image/upload/v1722365671/sandwitch_ixudnv.png"
                   alt="sandwich"
                   className="item-img-bg"
                 />
                 <p className="fav-item-names">Sandwich</p>
-              </li>
-              <li className="fav-item">
+              </Link>
+              <Link to="/menu" className="fav-item">
                 <img
                   src="https://res.cloudinary.com/dlefoxknm/image/upload/v1722365671/dessert_py8wvz.png"
                   alt="dessert"
                   className="item-img-bg"
                 />
                 <p className="fav-item-names">Dessert</p>
-              </li>
-              <li className="fav-item">
+              </Link>
+              <Link to="/menu" className="fav-item">
                 <img
                   src="https://res.cloudinary.com/dlefoxknm/image/upload/v1722365670/juice_nljk8m.png"
                   alt="juice"
                   className="item-img-bg"
                 />
                 <p className="fav-item-names">Juice</p>
-              </li>
+              </Link>
             </ul>
           </section>
           <section className="testimonials-section">
@@ -138,7 +138,7 @@ function Home() {
                 What Our Customers Say About Us
               </h1>
               <p className="customer-feedback">
-                “I had the pleasure of dining at Spicy Carvings last night, and
+                “I had the pleasure of dining at Spicy Cravings last night, and
                 I'm still raving about the experience! The attention to detail
                 in presentation and service was impeccable”
               </p>

@@ -1,7 +1,7 @@
 @import "../../App.scss";
 
 .about-main-container {
-  padding: 80px 20px 0 20px;
+  padding: 40px 20px 0 20px;
   font-family: $primary_font;
   @media all and (min-width: 500px) {
     .about-main-heading {
@@ -82,13 +82,11 @@
 
 @media all and (min-width: 500px) {
   .about-main-container {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 50px 40px 0 40px;
   }
 }
 @media all and (min-width: 900px) {
   .about-main-container {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 70px 50px 0 50px;
   }
 }

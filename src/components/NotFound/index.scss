@@ -1,0 +1,19 @@
+@import "../../App.scss";
+
+.not-found-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #131e3a;
+  font-family: $primary_font;
+  .not-found-sub-container {
+    text-align: center;
+    max-width: 350px;
+    color: $cravings_color;
+    .not-found-image {
+      width: 80%;
+    }
+  }
+}

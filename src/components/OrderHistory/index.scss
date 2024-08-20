@@ -1,0 +1,42 @@
+@import "../../App.scss";
+
+.order-history-main-container {
+  padding: 30px 20px 0 20px;
+  font-family: $primary_font;
+  .no-order-history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .no-order-history-sub-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .no-order-history-img {
+        width: 320px;
+      }
+      @media all and (min-width: 500px) {
+        .no-order-history-img {
+          width: 420px;
+        }
+      }
+      .dine-into-menu-link {
+        background-color: $cravings_color;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: aliceblue;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 500px) {
+  .order-history-main-container {
+    padding: 50px 40px 0 40px;
+  }
+}
+@media all and (min-width: 900px) {
+  .order-history-main-container {
+    padding: 70px 60px 0 60px;
+  }
+}

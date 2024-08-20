@@ -289,7 +289,7 @@ function Footer() {
                 ></path>
               </svg>
             </div>
-            <p>spicycravingspondy@email.com</p>
+            <p>spicycravings@gmail.com</p>
           </div>
           <div className="footer-social-media-container">
             <div>

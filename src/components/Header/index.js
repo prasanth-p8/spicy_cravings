@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { BsFillMenuButtonWideFill, BsCartCheck } from "react-icons/bs";
 import { FaHamburger, FaHome, FaHistory } from "react-icons/fa";
 import { FaPeopleGroup, FaRegCircleUser } from "react-icons/fa6";
@@ -7,6 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 import "./index.scss";
+import CartContext from "../CartContext";
 
 const locationList = [
   { id: 0, name: "Ariyalur" },
@@ -52,7 +53,10 @@ const locationList = [
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
-  const [headerLocation, setHeaderLocation] = useState(locationList[0].name);
+
+  const { cart, headerLocation, setHeaderLocation } = useContext(CartContext);
+
+  console.log(headerLocation);
 
   const openSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -78,13 +82,16 @@ const Header = () => {
         <nav className="nav-bar">
           <div className="location-select-container">
             <ImLocation2 size={20} fill="#fff" />
-            <select className="location-drop-down-list">
+            <select
+              className="location-drop-down-list"
+              onChange={(e) => setHeaderLocation(e.target.value)}
+              value={headerLocation}
+            >
               {locationList.map((location) => (
                 <option
                   className="options-list"
                   key={location.id}
-                  value={headerLocation}
-                  onChange={(e) => setHeaderLocation(e.target.value)}
+                  value={location.name}
                 >
                   {location.name}
                 </option>
@@ -106,6 +113,9 @@ const Header = () => {
             </Link>
             <Link className="desktop-nav-items" to="/cart">
               Cart
+              {cart.length > 0 && (
+                <span className="cart-item-count">{cart.length}</span>
+              )}
             </Link>
             <Link to="/order-history">
               <img
@@ -146,6 +156,9 @@ const Header = () => {
           <Link to="/cart" className="sidebar-item">
             <BsCartCheck size={25} />
             <p className="sidebar-menu-content">Cart</p>
+            {cart.length > 0 && (
+              <span className="cart-item-count">{cart.length}</span>
+            )}
           </Link>
           <Link to="/order-history" className="sidebar-item">
             <FaHistory size={25} />

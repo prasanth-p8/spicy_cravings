@@ -15,7 +15,7 @@
 }
 
 .home-main-container {
-  padding: 60px 20px 0 20px;
+  padding: 50px 20px 0 20px;
   font-family: $primary_font;
   .home-banner-section {
     display: flex;
@@ -25,7 +25,7 @@
     .banner-section-content {
       width: 500px;
       .text-highlight {
-        color: $carvings_color;
+        color: $cravings_color;
         margin-left: 10px;
       }
       .banner-section-description {
@@ -56,16 +56,19 @@
         align-items: center;
         margin-right: 25px;
         justify-content: space-between;
+        color: #000;
         .item-img-bg {
-          background-color: $carvings_color;
-          border-radius: 50px;
+          background-color: $cravings_color;
+          border-radius: 10px;
           height: 120px;
-          width: 150px;
+          width: 140px;
+          padding: 15px;
         }
         @media all and (min-width: 900px) {
           .item-img-bg {
-            height: 150px;
-            width: 200px;
+            height: 140px;
+            padding: 20px;
+            width: 180px;
           }
           .fav-item-names {
             font-size: 20px;
@@ -176,13 +179,11 @@
 
 @media all and (min-width: 500px) {
   .home-main-container {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 60px 40px 0 40px;
   }
 }
 @media all and (min-width: 900px) {
   .home-main-container {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding: 50px 60px 0 60px;
   }
 }

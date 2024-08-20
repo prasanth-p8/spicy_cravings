@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -61,7 +60,7 @@ function ReactSlider(props) {
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1200,
@@ -83,13 +82,12 @@ function ReactSlider(props) {
       },
     ],
   };
-
+  const { selectCategory } = props;
   return (
     <div className="slider-container">
       <Slider {...settings}>
         {menuItems.map((item) => {
           const { id, name, imgUrl } = item;
-          const { selectCategory } = props;
 
           const filterCategory = () => {
             selectCategory(name);

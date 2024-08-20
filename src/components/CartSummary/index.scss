@@ -1,0 +1,188 @@
+@import "../../App.scss";
+
+.cart-summary-container {
+  padding-top: 20px;
+  position: relative;
+  .coupoun-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $primary_font;
+    padding: 20px;
+    .coupoun-code-input {
+      width: 250px;
+      height: 40px;
+      font-size: 18px;
+      outline: none;
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 5px 10px;
+      border: 1px solid #b1b1b1;
+    }
+    .coupoun-status {
+      align-self: flex-start;
+      margin-top: 10px;
+      margin-bottom: 0;
+      color: $spicy_color;
+      font-size: 18px;
+    }
+    .apply-coupoun-button {
+      width: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 20px;
+      background-color: $spicy_color;
+      border-radius: 15px;
+      color: #fff;
+    }
+  }
+  .cart-summary-detail-container {
+    h1 {
+      font-family: $primary_font;
+    }
+    .cart-summary-each-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      h2 {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      h1 {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+    .place-order-button {
+      width: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color: $spicy_color;
+      margin-top: 20px;
+      color: #fff;
+    }
+  }
+  .cart-order-conformation-container {
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #00000025;
+    .order-conformation-container {
+      background-color: #00b3aa;
+      width: 90%;
+      padding: 20px;
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .order-conformation-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .order-conformation-table {
+        text-align: center;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #fff;
+        .table-heading-row {
+          border-bottom: #16000060 2px solid;
+          .table-heading-name {
+            padding: 5px;
+          }
+        }
+        .table-cart-item-row {
+          .cart-item-data-cell {
+            border-bottom: #16000060 1px solid;
+            padding: 5px;
+          }
+          .item-name-row {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            .food-label-img-cart {
+              width: 20px;
+              align-self: flex-start;
+              margin-top: 5px;
+              margin-right: 5px;
+            }
+            p {
+              margin: 0;
+            }
+          }
+        }
+      }
+      .table-ending-container {
+        display: flex;
+        align-self: flex-end;
+        width: 142px;
+        justify-content: space-around;
+        background-color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        p {
+          margin: 0;
+        }
+      }
+      .customer-location-container {
+        align-self: flex-start;
+        color: $cravings_color;
+        background-color: $logo_bg_color;
+        padding: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        p {
+          margin: 0;
+        }
+      }
+      .cart-order-conformation-buttons {
+        align-self: flex-end;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 20px;
+        .conform-button {
+          background-color: #007fe7;
+          color: #ddd;
+        }
+        .cancel-button {
+          margin-right: 10px;
+        }
+      }
+    }
+    @media screen and (min-width: 500px) {
+      .order-conformation-container {
+        width: 400px;
+        max-height: 80vh;
+      }
+    }
+    @media screen and (min-width: 900px) {
+      .order-conformation-container {
+        width: 450px;
+        max-height: 70vh;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 900px) {
+  .cart-summary-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+}

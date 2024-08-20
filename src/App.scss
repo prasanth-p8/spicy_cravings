@@ -2,7 +2,7 @@ $primary_font: "Battambang";
 $secondary_font: "Croissant One";
 $input_font: "roboto";
 $spicy_color: #e22c2a;
-$carvings_color: #e3a714;
+$cravings_color: #e3a714;
 $logo_bg_color: #0a252d;
 $theme_color: #39db4a;
 
@@ -74,5 +74,21 @@ body {
   .website-logo {
     width: 60px;
     border-radius: 45px;
+  }
+}
+
+.food-label-img {
+  width: 30px;
+  align-self: flex-start;
+}
+@media all and (min-width: 500px) {
+  .food-label-img {
+    width: 40px;
+  }
+}
+
+@media all and (min-width: 500px) {
+  .food-label-img {
+    width: 50px;
   }
 }
