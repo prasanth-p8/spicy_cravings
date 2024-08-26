@@ -84,72 +84,74 @@
       padding-left: 0;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       align-items: center;
-
       .each-menu-item {
-        margin-right: 20px;
-        margin-bottom: 20px;
+        margin: 10px;
         width: 180px;
+        min-height: 260px;
         border-radius: 10px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
           rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         display: flex;
         flex-direction: column;
         padding: 10px;
-        align-items: center;
-        text-align: center;
-        position: relative;
-
-        .must-try-dish-img {
-          width: 50px;
-          position: absolute;
-          right: 0;
-        }
-        .item-img {
-          width: 80px;
-          height: 80px;
-          border-radius: 40px;
-        }
-        @media all and (min-width: 500px) {
-          .item-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50px;
-          }
-        }
-        @media all and (min-width: 900px) {
-          .item-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 60px;
-          }
-        }
-        p {
-          margin: 0;
-          font-weight: 600;
-        }
-        .price-rating-container {
-          width: 90%;
+        justify-content: space-between;
+        .each-menu-detail-item {
           display: flex;
+          flex-direction: column;
+          text-align: center;
           align-items: center;
-          justify-content: space-between;
-          margin-bottom: 20px;
-          .item-price {
-            font-size: 18px;
-            font-weight: 500;
+          position: relative;
+          .must-try-dish-img {
+            width: 50px;
+            position: absolute;
+            right: 0;
+          }
+          .item-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
           }
           @media all and (min-width: 500px) {
-            .item-price {
-              font-size: 20px;
+            .item-img {
+              width: 100px;
+              height: 100px;
+              border-radius: 50px;
             }
           }
-
-          .item-rating-container {
+          @media all and (min-width: 900px) {
+            .item-img {
+              width: 120px;
+              height: 120px;
+              border-radius: 60px;
+            }
+          }
+          p {
+            margin: 0;
+            font-weight: 600;
+          }
+          .price-rating-container {
+            width: 90%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 55px;
+            margin-bottom: 20px;
+            .item-price {
+              font-size: 18px;
+              font-weight: 500;
+            }
+            @media all and (min-width: 500px) {
+              .item-price {
+                font-size: 20px;
+              }
+            }
+
+            .item-rating-container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 55px;
+            }
           }
         }
         .item-quantity-container {
@@ -173,12 +175,11 @@
       }
       @media all and (min-width: 500px) {
         .each-menu-item {
-          margin-right: 35px;
-          margin-bottom: 35px;
+          margin: 20px;
           width: 200px;
+          min-height: 300px;
           border-radius: 15px;
           padding: 15px;
-
           .must-try-dish-img {
             width: 65px;
           }
@@ -191,26 +192,15 @@
       }
       @media all and (min-width: 900px) {
         .each-menu-item {
-          margin-right: 45px;
-          margin-bottom: 45px;
+          margin: 30px;
           width: 225px;
           border-radius: 20px;
           padding: 20px;
-
+          min-height: 330px;
           .must-try-dish-img {
             width: 80px;
           }
         }
-      }
-    }
-    @media all and (min-width: 500px) {
-      .each-category-list {
-        justify-content: space-evenly;
-      }
-    }
-    @media all and (min-width: 900px) {
-      .each-category-list {
-        justify-content: space-between;
       }
     }
   }

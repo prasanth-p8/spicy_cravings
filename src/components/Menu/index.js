@@ -221,21 +221,27 @@ function Menu() {
 
       return (
         <li key={id} className="each-menu-item">
-          <img src={foodLabelImg} alt={foodLabel} className="food-label-img" />
-          {mustTry === "Yes" && (
+          <div className="each-menu-detail-item">
             <img
-              src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031825/must_try_dish_yzmjh9.png"
-              alt="must try dish"
-              className="must-try-dish-img"
+              src={foodLabelImg}
+              alt={foodLabel}
+              className="food-label-img"
             />
-          )}
-          <img src={imgUrl} alt={itemName} className="item-img" />
-          <p>{itemName}</p>
-          <div className="price-rating-container">
-            <p className="item-price">&#8377; {price}</p>
-            <div className="item-rating-container">
-              <FaStar fill="#ffef5e" size={24} />
-              <p className="customer-rating">4.9</p>
+            {mustTry === "Yes" && (
+              <img
+                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031825/must_try_dish_yzmjh9.png"
+                alt="must try dish"
+                className="must-try-dish-img"
+              />
+            )}
+            <img src={imgUrl} alt={itemName} className="item-img" />
+            <p>{itemName}</p>
+            <div className="price-rating-container">
+              <p className="item-price">&#8377; {price}</p>
+              <div className="item-rating-container">
+                <FaStar fill="#ffef5e" size={24} />
+                <p className="customer-rating">4.9</p>
+              </div>
             </div>
           </div>
           <div className="item-quantity-container">

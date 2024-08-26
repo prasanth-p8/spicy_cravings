@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Spicy Cravings
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Spicy Cravings is an online food ordering system that allows users to browse a menu, add items to a cart, and place orders. The project is built using a React frontend and a Node.js/Express backend, with SQLite as the database.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Demo](#demo)
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
+- [Running the Project](#running-the-project)
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Check out the live demo of the application: [Live Demo](https://spicy-cravings.vercel.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Overview
 
-### `npm test`
+Spicy Cravings allows users to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Browse a menu of food items
+- Apply filters to items
+- Add items to a cart
+- Place an order and receive a confirmation message
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Authentication**: Secure user authentication using JWT.
+- **Menu Display**: Dynamic menu display from the backend.
+- **Cart Management**: Add, remove, and manage cart items.
+- **Order Placement**: Users can place orders with real-time order confirmation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js
+- **Database**: SQLite
+- **Authentication**: JWT (JSON Web Tokens)
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js
+- npm or yarn
+- SQLite3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the repository:**
 
-## Learn More
+   ```bash
+   git clone https://github.com/prasanth-p8/Spicy_Cravings_Backend.git
+   cd Spicy_Cravings_Backend
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Install dependencies:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm install
+   ```
 
-### Code Splitting
+3. **Set up the SQLite database:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   Ensure you have SQLite installed and set up the database by running the SQL scripts provided (if any).
 
-### Analyzing the Bundle Size
+4. **Environment Variables:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   PORT= 3000 <br>
+   JWT_SECRET= your_secret_key
 
-### Making a Progressive Web App
+5. **Run the backend server:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   npm install
+   ```
 
-### Advanced Configuration
+   The server will start on `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## API Endpoints
 
-### Deployment
+### Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **POST `/login`:** Authenticate user and stores the JWT token.
 
-### `npm run build` fails to minify
+### Register
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **POST `/register`:** Adds user data into database.
+
+### Home
+
+- **GET `/`:** Retrieve the username and store it on header.
+
+### Menu
+
+- **GET `/menu`:** Retrieve the list of menu items.
+
+### Account
+
+- **GET `/profile`:** Retrieves all data of the user.
+
+## Running the Project
+
+1. **Start the Backend:**
+
+   ```bash
+   npm start
+   ```
+
+   The backend server should be running on http://localhost:3000.
+
+2. **Run the Frontend:**
+
+   Assuming you have the frontend in a separate repository, ensure it's running concurrently with the backend.
