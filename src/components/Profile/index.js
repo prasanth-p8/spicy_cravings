@@ -76,64 +76,68 @@ function Profile(props) {
     };
 
     return (
-      <section className="profile-main-contaier">
-        <div className="profile-user-container">
-          <img
-            src={profileAvatar}
-            alt="avatar-icon"
-            className="profile-avatar-icon"
-          />
-          <div className="profile-user-details">
-            <p>
-              {firstname[0].toUpperCase() + firstname.slice(1)}{" "}
-              {lastname[0].toUpperCase() + lastname.slice(1)}
-            </p>
-            <p>{email}</p>
+      <>
+        <Header />
+        <section className="profile-main-contaier">
+          <div className="profile-user-container">
+            <img
+              src={profileAvatar}
+              alt="avatar-icon"
+              className="profile-avatar-icon"
+            />
+            <div className="profile-user-details">
+              <p>
+                {firstname[0].toUpperCase() + firstname.slice(1)}{" "}
+                {lastname[0].toUpperCase() + lastname.slice(1)}
+              </p>
+              <p>{email}</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <h1>Account</h1>
-          <hr />
-          <p>Username: {username[0].toUpperCase() + username.slice(1)}</p>
-          <hr />
-          <p>Password: {"*".repeat(10)}</p>
-          <hr />
-        </div>
-        <div className="logout-button-container">
-          <Popup
-            modal
-            trigger={
-              <button className="button logout-button" on>
-                Logout
-              </button>
-            }
-          >
-            {(close) => (
-              <>
-                <div className="logout-popup-container">
-                  <h3>Are you sure you want to logout?</h3>
-                  <div className="logout-popup-button">
-                    <button
-                      type="button"
-                      className="button confirm-button"
-                      onClick={logoutUser}
-                    >
-                      Confirm
-                    </button>
-                    <button
-                      type="button"
-                      className="button cancel-button"
-                      onClick={() => close()}
-                    >
-                      Cancel
-                    </button>
+          <div>
+            <h1>Account</h1>
+            <hr />
+            <p>Username: {username[0].toUpperCase() + username.slice(1)}</p>
+            <hr />
+            <p>Password: {"*".repeat(10)}</p>
+            <hr />
+          </div>
+          <div className="logout-button-container">
+            <Popup
+              modal
+              trigger={
+                <button className="button logout-button" on>
+                  Logout
+                </button>
+              }
+            >
+              {(close) => (
+                <>
+                  <div className="logout-popup-container">
+                    <h3>Are you sure you want to logout?</h3>
+                    <div className="logout-popup-button">
+                      <button
+                        type="button"
+                        className="button confirm-button"
+                        onClick={logoutUser}
+                      >
+                        Confirm
+                      </button>
+                      <button
+                        type="button"
+                        className="button cancel-button"
+                        onClick={() => close()}
+                      >
+                        Cancel
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </>
-            )}
-          </Popup>
-        </div>
-      </section>
+                </>
+              )}
+            </Popup>
+          </div>
+        </section>
+        <Footer />
+      </>
     );
   };
 
@@ -157,13 +161,7 @@ function Profile(props) {
     }
   };
 
-  return (
-    <>
-      <Header />
-      {renderProfilePage()}
-      <Footer />
-    </>
-  );
+  return renderProfilePage();
 }
 
 export default Profile;

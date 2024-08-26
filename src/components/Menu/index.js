@@ -268,161 +268,165 @@ function Menu() {
     const itemText = cart.length >= 2 ? "Items" : "Item";
 
     return (
-      <section className="menu-main-contaier">
-        <h1 className="menu-main-heading">What's on your mind?</h1>
-        <ReactSlider selectCategory={selectCategory} />
-        <div className="clear-filter-button-container">
-          <button
-            className="button clear-filter-button"
-            onClick={clearMenuFilter}
-          >
-            <FcClearFilters size={25} />
-            <p>Clear All Filters</p>
-          </button>
-        </div>
-        <div className="menu-filter-container">
-          <div className="search-input-container">
-            <input
-              type="search"
-              placeholder="search"
-              className="menu-search-input"
-              value={searchItem}
-              onChange={(e) => setSearchItem(e.target.value)}
-              onKeyDown={searchMenuItemInput}
-            />
+      <>
+        <Header />
+        <section className="menu-main-contaier">
+          <h1 className="menu-main-heading">What's on your mind?</h1>
+          <ReactSlider selectCategory={selectCategory} />
+          <div className="clear-filter-button-container">
             <button
-              className="button menu-search-button"
-              onClick={searchMenuItem}
+              className="button clear-filter-button"
+              onClick={clearMenuFilter}
             >
-              <BsSearchHeart size={25} />
+              <FcClearFilters size={25} />
+              <p>Clear All Filters</p>
             </button>
           </div>
-          <MenuFoodLabelFilter
-            filters={filters}
-            setFilters={setFilters}
-            filterFoodLabel={setFoodLabelFilter}
-          />
-        </div>
-        {data.length !== 0 ? (
-          <ul className="category-menu-list">
-            <li>
-              {burgerList.length !== 0 ? (
-                <h1>Burger ({burgerList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {burgerList.map((item) => menuList(item))}
-              </ul>
-            </li>
-            <li>
-              {pizzaList.length !== 0 ? (
-                <h1>Pizza ({pizzaList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {pizzaList.map((item) => menuList(item))}
-              </ul>
-            </li>
-            <li>
-              {breadOmeletteList.length !== 0 ? (
-                <h1>Bread Omelette ({breadOmeletteList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {breadOmeletteList.map((item) => menuList(item))}
-              </ul>
-            </li>
-            <li>
-              {friedMomosList.length !== 0 ? (
-                <h1>Fried Momos ({friedMomosList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {friedMomosList.map((item) => menuList(item))}
-              </ul>
-            </li>
-            <li>
-              {sandwichList.length !== 0 ? (
-                <h1>Sandwich ({sandwichList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {sandwichList.map((item) => menuList(item))}
-              </ul>
-            </li>
-            <li>
-              {coolersList.length !== 0 ? (
-                <h1>Coolers ({coolersList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {coolersList.map((item) => menuList(item))}
-              </ul>
-            </li>
-            <li>
-              {friesList.length !== 0 ? (
-                <h1>Fries ({friesList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {friesList.map((item) => menuList(item))}
-              </ul>
-            </li>
-            <li>
-              {maggiList.length !== 0 ? (
-                <h1>Maggi ({maggiList.length})</h1>
-              ) : (
-                ""
-              )}
-              <ul className="each-category-list">
-                {maggiList.map((item) => menuList(item))}
-              </ul>
-            </li>
-          </ul>
-        ) : (
-          <div className="no-menu-found-container">
-            <div className="no-menu-found-sub-container">
-              <img
-                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723118288/No_Menu_Found_s0g7dg.jpg"
-                alt="no menu found"
-                className="no-menu-found"
+          <div className="menu-filter-container">
+            <div className="search-input-container">
+              <input
+                type="search"
+                placeholder="search"
+                className="menu-search-input"
+                value={searchItem}
+                onChange={(e) => setSearchItem(e.target.value)}
+                onKeyDown={searchMenuItemInput}
               />
-              <h1>NO MENU FOUND</h1>
-              <p>
-                Looks like your search doesn't match with menu items. Explore
-                some other menu we have!
-              </p>
               <button
-                className="button no-menu-found-button"
-                onClick={clearMenuFilter}
+                className="button menu-search-button"
+                onClick={searchMenuItem}
               >
-                Back to Menu
+                <BsSearchHeart size={25} />
               </button>
             </div>
+            <MenuFoodLabelFilter
+              filters={filters}
+              setFilters={setFilters}
+              filterFoodLabel={setFoodLabelFilter}
+            />
           </div>
-        )}
-        {cart.length > 0 && (
-          <div className="item-cart-popup-container">
-            <div className="item-cart-popup">
-              <p>
-                <span className="cart-count-number">{cart.length}</span>
-                {itemText} added
-              </p>
-              <Link to="cart" className="view-cart-link">
-                <p>View Cart</p>
-                <FaChevronRight size={25} />
-              </Link>
+          {data.length !== 0 ? (
+            <ul className="category-menu-list">
+              <li>
+                {burgerList.length !== 0 ? (
+                  <h1>Burger ({burgerList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {burgerList.map((item) => menuList(item))}
+                </ul>
+              </li>
+              <li>
+                {pizzaList.length !== 0 ? (
+                  <h1>Pizza ({pizzaList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {pizzaList.map((item) => menuList(item))}
+                </ul>
+              </li>
+              <li>
+                {breadOmeletteList.length !== 0 ? (
+                  <h1>Bread Omelette ({breadOmeletteList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {breadOmeletteList.map((item) => menuList(item))}
+                </ul>
+              </li>
+              <li>
+                {friedMomosList.length !== 0 ? (
+                  <h1>Fried Momos ({friedMomosList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {friedMomosList.map((item) => menuList(item))}
+                </ul>
+              </li>
+              <li>
+                {sandwichList.length !== 0 ? (
+                  <h1>Sandwich ({sandwichList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {sandwichList.map((item) => menuList(item))}
+                </ul>
+              </li>
+              <li>
+                {coolersList.length !== 0 ? (
+                  <h1>Coolers ({coolersList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {coolersList.map((item) => menuList(item))}
+                </ul>
+              </li>
+              <li>
+                {friesList.length !== 0 ? (
+                  <h1>Fries ({friesList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {friesList.map((item) => menuList(item))}
+                </ul>
+              </li>
+              <li>
+                {maggiList.length !== 0 ? (
+                  <h1>Maggi ({maggiList.length})</h1>
+                ) : (
+                  ""
+                )}
+                <ul className="each-category-list">
+                  {maggiList.map((item) => menuList(item))}
+                </ul>
+              </li>
+            </ul>
+          ) : (
+            <div className="no-menu-found-container">
+              <div className="no-menu-found-sub-container">
+                <img
+                  src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723118288/No_Menu_Found_s0g7dg.jpg"
+                  alt="no menu found"
+                  className="no-menu-found"
+                />
+                <h1>NO MENU FOUND</h1>
+                <p>
+                  Looks like your search doesn't match with menu items. Explore
+                  some other menu we have!
+                </p>
+                <button
+                  className="button no-menu-found-button"
+                  onClick={clearMenuFilter}
+                >
+                  Back to Menu
+                </button>
+              </div>
             </div>
-          </div>
-        )}
-      </section>
+          )}
+          {cart.length > 0 && (
+            <div className="item-cart-popup-container">
+              <div className="item-cart-popup">
+                <p>
+                  <span className="cart-count-number">{cart.length}</span>
+                  {itemText} added
+                </p>
+                <Link to="cart" className="view-cart-link">
+                  <p>View Cart</p>
+                  <FaChevronRight size={25} />
+                </Link>
+              </div>
+            </div>
+          )}
+        </section>
+        <Footer />
+      </>
     );
   };
 
@@ -444,13 +448,7 @@ function Menu() {
     }
   };
 
-  return (
-    <>
-      <Header />
-      {renderMenuPage()}
-      <Footer />
-    </>
-  );
+  return renderMenuPage();
 }
 
 export default Menu;
