@@ -13,6 +13,7 @@ function Login(props) {
   const [loginErrorMsg, setLoginErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  //showing error message if user lose focus on username input element
   const showErrorUsername = () => {
     if (username === "") {
       setErrMsgUsername(true);
@@ -21,6 +22,7 @@ function Login(props) {
     }
   };
 
+  //showing error message if user lose focus on password input element
   const showErrorPassword = () => {
     if (password === "") {
       setErrMsgPassword(true);
@@ -29,6 +31,7 @@ function Login(props) {
     }
   };
 
+  //function executes when user submits proper username & password
   const onSubmit = (token) => {
     setLoginErrorMsg("");
     const { history } = props;
@@ -36,6 +39,7 @@ function Login(props) {
     history.replace("/");
   };
 
+  //funciton trigger when user clicks the submit button
   const loginUser = async (event) => {
     event.preventDefault();
     if (username !== "" && password !== "") {
@@ -66,11 +70,15 @@ function Login(props) {
     }
   };
 
+  //getting jwt token from Cookies
   const jwtToken = Cookies.get("jwt_token");
+
+  //if jwtToken is not undefined the user is redirect to home page
   if (jwtToken !== undefined) {
     return <Redirect to="/" />;
   }
 
+  //variable used to display password icon
   const passwordInputIcon = showPassword ? (
     <GoEye size={25} />
   ) : (

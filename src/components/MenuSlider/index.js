@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.scss";
 
+//array of object contains data for menu item to display the top slider filter.
 const menuItems = [
   {
     id: 0,

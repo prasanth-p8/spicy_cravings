@@ -1,6 +1,7 @@
 import "./index.scss";
 
 function MenuFoodLabelFilter({ filters, setFilters, filterFoodLabel }) {
+  //funciton used to handle the food label filters
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
     console.log(checked);
@@ -22,6 +23,7 @@ function MenuFoodLabelFilter({ filters, setFilters, filterFoodLabel }) {
       }
     });
   };
+
   const { veg, egg, nonVeg } = filters;
   return (
     <div className="filter-foodlabel-checkboxes">

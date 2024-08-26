@@ -1,0 +1,56 @@
+@import "../../App.scss";
+
+.failure-view-container {
+  background-image: url("../../../public/Assets/Images/failure_view_bg.jpg");
+  min-height: 80vh;
+  padding: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  .failure-view-sub-container {
+    max-width: 150px;
+    color: #fff;
+    .failure-view-try-again-button {
+      background-color: transparent;
+      border: 1px solid #06dee9;
+      width: 150px;
+      font-size: 16px;
+      color: #06dee9;
+    }
+  }
+}
+
+@media all and (min-width: 500px) {
+  .failure-view-container {
+    min-height: 90vh;
+    padding: 0 0 80px 80px;
+    .failure-view-sub-container {
+      max-width: 200px;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+@media all and (min-width: 900px) {
+  .failure-view-container {
+    min-height: 120vh;
+    padding: 0 0 90px 90px;
+    .failure-view-sub-container {
+      max-width: 250px;
+      margin-bottom: 250px;
+    }
+    h1 {
+      font-size: 45px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 25px;
+    }
+  }
+}

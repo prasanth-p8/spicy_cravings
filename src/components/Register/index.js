@@ -17,9 +17,7 @@ function Register(props) {
   const [errMsg, setErrMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  console.log(wrongPassword);
-  console.log(allFieldsNeeded);
-
+  //funciton trigger when user clicks the submit button
   const registerUser = async (event) => {
     event.preventDefault();
     if (password !== rePassword) {
@@ -69,6 +67,7 @@ function Register(props) {
     }
   };
 
+  //check the password length is greater than equal to 8
   const checkPasswordStrength = () => {
     if (password.length >= 8) {
       setWeakPassword(false);
@@ -77,6 +76,7 @@ function Register(props) {
     }
   };
 
+  //variable used to display password icon
   const passwordInputIcon = showPassword ? (
     <GoEye size={25} />
   ) : (

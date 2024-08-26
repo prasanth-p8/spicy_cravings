@@ -1,0 +1,57 @@
+@import "../../App.scss";
+
+.loading-veiw-container {
+  background-image: url("https://i.pinimg.com/originals/a1/27/32/a127323b95837b64ed32d6be9460a0df.gif");
+  min-height: 80vh;
+  padding: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loading-text-container {
+    margin-top: 40%;
+    margin-left: 20%;
+    font-size: 1.5em;
+    font-weight: 600;
+    span {
+      display: inline-block;
+      margin: 0 0.1em;
+      animation: loading-text-container 2s infinite alternate;
+      @for $i from 0 through 9 {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: #{$i * 0.1}s;
+        }
+      }
+    }
+  }
+  @media all and (min-width: 500px) {
+    .loading-text-container {
+      margin-top: 25%;
+      margin-left: 10%;
+      font-size: 2em;
+      font-weight: 700;
+    }
+  }
+  @media all and (min-width: 900px) {
+    .loading-text-container {
+      margin-top: 15%;
+      margin-left: 0;
+      font-size: 2.5em;
+      font-weight: 800;
+    }
+  }
+}
+
+@keyframes loading-text-container {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}

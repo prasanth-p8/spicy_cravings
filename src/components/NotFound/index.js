@@ -12,11 +12,11 @@ function NotFound() {
           className="not-found-image"
         />
         <h1>Whoops, nothing delicious to find here.</h1>
-        <p>
+        <p className="not-found-description">
           Seems like the page you were trying to find is no longer available.
         </p>
         <Link to="/">
-          <button className="button">GO HOME</button>
+          <button className="button not-found-go-home-button">GO HOME</button>
         </Link>
       </div>
     </div>

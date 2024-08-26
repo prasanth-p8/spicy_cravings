@@ -7,37 +7,35 @@ import "./index.scss";
 function CartSummary() {
   const [coupounStatus, setCoupounStatus] = useState(true);
   const [orderConformation, setOrderConformation] = useState(false);
+  const { cart, setCart, headerLocation } = useContext(CartContext);
 
-  const { cart, headerLocation } = useContext(CartContext);
+  //total price of the cart is calculated using forEach
   let totalCartPrice = 0;
   cart.forEach((item) => {
     totalCartPrice += item.price * item.quantity;
   });
 
+  //total quantities of items in the cart is calculated using forEach
   let totalCartQuantities = 0;
   cart.forEach((item) => {
     totalCartQuantities += item.quantity;
   });
 
+  //checking applied coupoun is valid or not
   const checkCoupounStatus = () => {
     setCoupounStatus(false);
   };
 
+  //placing and canceling order conformation popup button toggle
   const toggleOrderConformation = () => {
     setOrderConformation(!orderConformation);
   };
 
-  const formattedCartItems = cart.map((item) => ({
-    id: item.id,
-    itemName: item.item_name,
-    price: item.price,
-    foodLabel: item.food_label,
-    imgUrl: item.img_url,
-  }));
-
-  console.log(formattedCartItems);
-
-  const placeTheOrder = () => {};
+  //final conformation for placing the order in the cart
+  const placeTheOrder = () => {
+    setOrderConformation(!orderConformation);
+    setCart([]);
+  };
 
   return (
     <div className="cart-summary-container">
@@ -78,12 +76,14 @@ function CartSummary() {
             <div className="order-conformation-container">
               <h1 className="order-conformation-heading">Order Conformation</h1>
               <table className="order-conformation-table">
-                <tr className="table-heading-row">
-                  <th className="table-heading-name">Name</th>
-                  <th className="table-heading-name">Price</th>
-                  <th className="table-heading-name">Quantity</th>
-                  <th className="table-heading-name">Subtotal</th>
-                </tr>
+                <thead className="table-heading-row">
+                  <tr>
+                    <th className="table-heading-name">Name</th>
+                    <th className="table-heading-name">Price</th>
+                    <th className="table-heading-name">Quantity</th>
+                    <th className="table-heading-name">Subtotal</th>
+                  </tr>
+                </thead>
                 {cart.map((item) => {
                   const { id, itemName, price, foodLabel, quantity } = item;
 

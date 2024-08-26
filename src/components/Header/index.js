@@ -56,14 +56,16 @@ const Header = () => {
 
   const { cart, headerLocation, setHeaderLocation } = useContext(CartContext);
 
-  console.log(headerLocation);
-
+  //opening and closing sidebar in medium device toggle funciton
   const openSidebar = () => {
     setShowSidebar(!showSidebar);
   };
 
+  //getting user details from localStorage
   const userDetails = JSON.parse(localStorage.getItem("user_details"));
   const { gender, username } = userDetails;
+
+  //choosing profile avatar pic with the response data from the backend
   const profileAvatar =
     gender === "female"
       ? "https://res.cloudinary.com/dlefoxknm/image/upload/v1722360484/woman_1_nwpblz.png"

@@ -12,14 +12,17 @@ import "./index.scss";
 function Cart() {
   const { cart, setCart } = useContext(CartContext);
 
+  //remove all items in the cart
   const removeAllCartItems = () => {
     setCart([]);
   };
 
+  //selected item is removed from the cart
   const removeTheCartItem = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
+  //increase quantity of a particular item selected in the cart
   const increaseQuantityCart = (id) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -28,6 +31,7 @@ function Cart() {
     );
   };
 
+  //decrease quantity of a particular item selected in the cart
   const decreaseQuantityCart = (id) => {
     const findItemQuantity = cart.find((item) => item.id === id);
     console.log(findItemQuantity);
