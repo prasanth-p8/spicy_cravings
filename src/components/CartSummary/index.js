@@ -4,10 +4,10 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { TbShoppingCartShare } from "react-icons/tb";
 import "./index.scss";
 
-function CartSummary() {
+function CartSummary({ showOrderResponse }) {
   const [coupounStatus, setCoupounStatus] = useState(true);
   const [orderConformation, setOrderConformation] = useState(false);
-  const { cart, setCart, headerLocation } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
   //total price of the cart is calculated using forEach
   let totalCartPrice = 0;
@@ -34,6 +34,7 @@ function CartSummary() {
   //final conformation for placing the order in the cart
   const placeTheOrder = () => {
     setOrderConformation(!orderConformation);
+    showOrderResponse();
     setCart([]);
   };
 
@@ -74,7 +75,7 @@ function CartSummary() {
         {orderConformation && (
           <div className="cart-order-conformation-container">
             <div className="order-conformation-container">
-              <h1 className="order-conformation-heading">Order Conformation</h1>
+              <h1 className="order-conformation-heading">Order Confirmation</h1>
               <table className="order-conformation-table">
                 <thead className="table-heading-row">
                   <tr>
@@ -90,16 +91,17 @@ function CartSummary() {
                   let foodLabelImg;
                   switch (foodLabel) {
                     case "Non Veg":
+                    case "Non Veg":
                       foodLabelImg =
-                        "https://res.cloudinary.com/dlefoxknm/image/upload/v1722947835/Non_Veg_e2z0uo.png";
+                        "https://res.cloudinary.com/dlefoxknm/image/upload/v1724783607/Non_Veg_bm5qhj.png";
                       break;
                     case "Veg":
                       foodLabelImg =
-                        "https://res.cloudinary.com/dlefoxknm/image/upload/v1722947835/Veg_xje97w.png";
+                        "https://res.cloudinary.com/dlefoxknm/image/upload/v1724783607/Veg_nctzsz.png";
                       break;
                     case "Egg":
                       foodLabelImg =
-                        "https://res.cloudinary.com/dlefoxknm/image/upload/v1722947835/Egg_Food_nv4uxt.png";
+                        "https://res.cloudinary.com/dlefoxknm/image/upload/v1724783607/Egg_Food_xowvjy.png";
                       break;
                     default:
                       return null;
@@ -127,15 +129,12 @@ function CartSummary() {
                 <p>{totalCartQuantities}</p>
                 <p>&#8377; {totalCartPrice}</p>
               </div>
-              <div className="customer-location-container">
-                <p>LOCATION: {headerLocation}</p>
-              </div>
               <div className="cart-order-conformation-buttons">
                 <button
                   className="button conform-button"
                   onClick={placeTheOrder}
                 >
-                  Conform
+                  Confirm
                 </button>
                 <button
                   className="button cancel-button"

@@ -77,7 +77,7 @@
     list-style: none;
     padding-left: 0;
     h1 {
-      font-family: $secondary_font;
+      font-family: $input_font;
     }
     .each-category-list {
       list-style: none;
@@ -85,32 +85,57 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
       .each-menu-item {
-        margin: 10px;
-        width: 180px;
-        min-height: 260px;
+        margin: 10px 20px;
+        width: 200px;
+        min-height: 280px;
         border-radius: 10px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
           rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         display: flex;
         flex-direction: column;
         padding: 10px;
+        align-items: center;
         justify-content: space-between;
         .each-menu-detail-item {
+          width: 100%;
           display: flex;
           flex-direction: column;
           text-align: center;
           align-items: center;
           position: relative;
           .must-try-dish-img {
-            width: 50px;
+            width: 20px;
             position: absolute;
             right: 0;
           }
-          .item-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 40px;
+          @media screen and (min-width: 500px) {
+            .must-try-dish-img {
+              width: 24px;
+            }
+          }
+          @media screen and (min-width: 900px) {
+            .must-try-dish-img {
+              width: 28px;
+            }
+          }
+          .item-img-container {
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+              rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+              rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            border-radius: 50px;
+            margin-bottom: 10px;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .item-img {
+              width: 80px;
+              height: 80px;
+              border-radius: 40px;
+            }
           }
           @media all and (min-width: 500px) {
             .item-img {
@@ -157,19 +182,23 @@
         .item-quantity-container {
           display: flex;
           align-items: center;
-          width: 90%;
-          justify-content: space-between;
+          width: 60%;
+          justify-content: space-evenly;
+          border: #00000040 2px solid;
+          border-radius: 10px;
+
           .quantity-button {
             width: 30px;
-            height: 30px;
-            .quantity-item-button {
-              width: 30px;
-            }
+            font-size: 1.8em;
+            font-weight: 600;
+            color: rgb(68, 142, 64);
           }
           .item-quantity {
-            margin: 0;
-            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 1.6em;
             font-weight: 600;
+            color: rgb(68, 142, 64);
           }
         }
       }
@@ -180,9 +209,7 @@
           min-height: 300px;
           border-radius: 15px;
           padding: 15px;
-          .must-try-dish-img {
-            width: 65px;
-          }
+
           p {
             font-size: 18px;
             margin-top: 5px;
@@ -197,10 +224,12 @@
           border-radius: 20px;
           padding: 20px;
           min-height: 330px;
-          .must-try-dish-img {
-            width: 80px;
-          }
         }
+      }
+    }
+    @media all and (min-width: 600px) {
+      .each-category-list {
+        justify-content: flex-start;
       }
     }
   }

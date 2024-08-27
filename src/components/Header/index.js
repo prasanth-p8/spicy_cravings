@@ -5,6 +5,7 @@ import { FaPeopleGroup, FaRegCircleUser } from "react-icons/fa6";
 import { ImLocation2 } from "react-icons/im";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
 
 import "./index.scss";
 import CartContext from "../CartContext";
@@ -147,33 +148,71 @@ const Header = () => {
         </div>
         <ul className="sidebar-menu-items">
           <Link to="/" className="sidebar-item">
-            <FaHome size={25} />
-            <p className="sidebar-menu-content">Home</p>
+            <div className="sidebar-item-left">
+              <div className="sidebar-logo-icon-container">
+                <FaHome size={25} color="#00000060" />
+              </div>
+              <p className="sidebar-menu-content">Home</p>
+            </div>
+            <IoIosArrowForward size={25} />
           </Link>
+          <hr className="sidebar-hr-line" />
           <Link to="/menu" className="sidebar-item">
-            <BsFillMenuButtonWideFill size={25} />
-            <p className="sidebar-menu-content">Menu</p>
+            <div className="sidebar-item-left">
+              <div className="sidebar-logo-icon-container">
+                <BsFillMenuButtonWideFill size={22} color="#00000060" />
+              </div>
+              <p className="sidebar-menu-content">Menu</p>
+            </div>
+            <IoIosArrowForward size={25} />
           </Link>
-
+          <hr className="sidebar-hr-line" />
           <Link to="/cart" className="sidebar-item">
-            <BsCartCheck size={25} />
-            <p className="sidebar-menu-content">Cart</p>
-            {cart.length > 0 && (
-              <span className="cart-item-count">{cart.length}</span>
-            )}
+            <div className="sidebar-item-left">
+              <div className="sidebar-logo-icon-container">
+                <BsCartCheck size={24} color="#00000060" />
+              </div>
+              <p className="sidebar-menu-content">
+                Cart{" "}
+                {cart.length > 0 && (
+                  <span className="cart-item-count">{cart.length}</span>
+                )}
+              </p>
+            </div>
+
+            <IoIosArrowForward size={25} />
           </Link>
+          <hr className="sidebar-hr-line" />
           <Link to="/order-history" className="sidebar-item">
-            <FaHistory size={25} />
-            <p className="sidebar-menu-content">Order History</p>
+            <div className="sidebar-item-left">
+              <div className="sidebar-logo-icon-container">
+                <FaHistory size={24} color="#00000060" />
+              </div>
+              <p className="sidebar-menu-content">Order History</p>
+            </div>
+            <IoIosArrowForward size={25} />
           </Link>
+          <hr className="sidebar-hr-line" />
           <Link to="/about" className="sidebar-item">
-            <FaPeopleGroup size={25} />
-            <p className="sidebar-menu-content">About us</p>
+            <div className="sidebar-item-left">
+              <div className="sidebar-logo-icon-container">
+                <FaPeopleGroup size={25} color="#00000060" />
+              </div>
+              <p className="sidebar-menu-content">About us</p>
+            </div>
+            <IoIosArrowForward size={25} />
           </Link>
+          <hr className="sidebar-hr-line" />
           <Link to="/profile" className="sidebar-item">
-            <FaRegCircleUser size={25} />
-            <p className="sidebar-menu-content">Profile</p>
+            <div className="sidebar-item-left">
+              <div className="sidebar-logo-icon-container">
+                <FaRegCircleUser size={25} color="#00000060" />
+              </div>
+              <p className="sidebar-menu-content">Profile</p>
+            </div>
+            <IoIosArrowForward size={25} />
           </Link>
+          <hr className="sidebar-hr-line" />
         </ul>
       </div>
     </header>

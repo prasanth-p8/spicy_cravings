@@ -205,15 +205,15 @@ function Menu() {
       switch (foodLabel) {
         case "Non Veg":
           foodLabelImg =
-            "https://res.cloudinary.com/dlefoxknm/image/upload/v1722947835/Non_Veg_e2z0uo.png";
+            "https://res.cloudinary.com/dlefoxknm/image/upload/v1724783607/Non_Veg_bm5qhj.png";
           break;
         case "Veg":
           foodLabelImg =
-            "https://res.cloudinary.com/dlefoxknm/image/upload/v1722947835/Veg_xje97w.png";
+            "https://res.cloudinary.com/dlefoxknm/image/upload/v1724783607/Veg_nctzsz.png";
           break;
         case "Egg":
           foodLabelImg =
-            "https://res.cloudinary.com/dlefoxknm/image/upload/v1722947835/Egg_Food_nv4uxt.png";
+            "https://res.cloudinary.com/dlefoxknm/image/upload/v1724783607/Egg_Food_xowvjy.png";
           break;
         default:
           return null;
@@ -229,17 +229,19 @@ function Menu() {
             />
             {mustTry === "Yes" && (
               <img
-                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031825/must_try_dish_yzmjh9.png"
-                alt="must try dish"
+                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1724785710/best_seller_heart_ktx7bg.png"
+                alt="best seller dish"
                 className="must-try-dish-img"
               />
             )}
-            <img src={imgUrl} alt={itemName} className="item-img" />
+            <div className="item-img-container">
+              <img src={imgUrl} alt={itemName} className="item-img" />
+            </div>
             <p>{itemName}</p>
             <div className="price-rating-container">
               <p className="item-price">&#8377; {price}</p>
               <div className="item-rating-container">
-                <FaStar fill="#ffef5e" size={24} />
+                <FaStar fill="#ffa534" size={24} />
                 <p className="customer-rating">4.9</p>
               </div>
             </div>
@@ -249,22 +251,14 @@ function Menu() {
               className="button quantity-button"
               onClick={() => decreaseItemQuantity(id)}
             >
-              <img
-                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031305/Item_Minus_Button_pnxxn7.png"
-                alt="minus item button"
-                className="quantity-item-button"
-              />
+              -
             </button>
             <p className="item-quantity">{quantities[id]}</p>
             <button
               className="button quantity-button"
               onClick={() => increaseItemQuantity(id)}
             >
-              <img
-                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031305/Item_Plus_Button_d3sa7k.png"
-                alt="plus item button"
-                className="quantity-item-button"
-              />
+              +
             </button>
           </div>
         </li>

@@ -187,6 +187,149 @@
       color: #fefcff;
       border-radius: 10px;
     }
+    .order-response-container {
+      position: fixed;
+      background-color: #00000025;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      .order-response-sub-container {
+        border: #000000 double 2px;
+        border-radius: 20px;
+        margin-top: 50px;
+        background-color: #fff;
+        text-align: center;
+        .order-response-top-container {
+          background-color: #d9312f;
+          width: 100%;
+          height: 30vh;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .restaurant-heading {
+            font-size: 1.5em;
+            font-weight: 500;
+            margin: 0;
+            color: #fff;
+          }
+          .order-res-horizontal-line {
+            border: 1px solid #658676;
+            width: 100%;
+          }
+          .order-res-close-button {
+            background-color: transparent;
+            align-self: flex-end;
+            width: 50px;
+            height: 30px;
+            margin-top: 10px;
+            margin-right: 10px;
+          }
+          .order-response-bg-img-container {
+            background-image: url("../../../public/Assets/Images/Background/golden-ribbon-bg.png");
+            display: flex;
+            background-position: center center;
+            height: 140px;
+            border-radius: 20px;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            .thank-you-tick-img {
+              width: 70px;
+            }
+          }
+          .order-number {
+            background-color: $cravings_color;
+            padding: 10px 20px;
+            margin-bottom: 0;
+            border-radius: 5px;
+            position: absolute;
+            top: 385px;
+          }
+        }
+        .order-response-bottom-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          .thank-you-username {
+            margin-bottom: 0;
+            margin-top: 30px;
+            font-weight: 600;
+          }
+          .thanks-for-your-order {
+            font-size: 1.5em;
+          }
+          .order-res-date-time-container {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            justify-content: space-evenly;
+            .date-time-title {
+              margin-bottom: 0;
+            }
+            .date-time-values {
+              margin-top: 0;
+            }
+          }
+          .order-res-description {
+            width: 350px;
+          }
+        }
+      }
+      @media screen and (min-width: 500px) {
+        .order-response-sub-container {
+          margin-top: 60px;
+        }
+      }
+      @media screen and (min-width: 900px) {
+        .order-response-sub-container {
+          margin-top: 80px;
+          width: 500px;
+          .order-response-top-container {
+            height: 40vh;
+            .restaurant-heading {
+              font-size: 1.8em;
+              font-weight: 600;
+            }
+            .order-response-bg-img-container {
+              height: 160px;
+              .thank-you-tick-img {
+                width: 100px;
+              }
+            }
+            .order-number {
+              font-weight: 700;
+              font-size: 1.2em;
+              top: 410px;
+            }
+          }
+          .order-response-bottom-container {
+            .thank-you-username {
+              font-size: 1.2em;
+            }
+            .thanks-for-your-order {
+              font-size: 1.8em;
+            }
+            .order-res-date-time-container {
+              font-size: 1.2em;
+              font-weight: 600;
+            }
+            .order-res-description {
+              font-size: 1.2em;
+              width: 420px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
