@@ -54,6 +54,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: transparent;
       }
     }
 
@@ -192,6 +193,7 @@
             font-size: 1.8em;
             font-weight: 600;
             color: rgb(68, 142, 64);
+            background-color: transparent;
           }
           .item-quantity {
             margin-top: 0;
@@ -274,6 +276,7 @@
         display: flex;
         align-items: center;
         color: #fff;
+        text-decoration: none;
       }
     }
   }

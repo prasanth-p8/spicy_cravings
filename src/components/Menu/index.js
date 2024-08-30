@@ -229,8 +229,9 @@ function Menu() {
             />
             {mustTry === "Yes" && (
               <img
+                title="best seller dish"
                 src="https://res.cloudinary.com/dlefoxknm/image/upload/v1724785710/best_seller_heart_ktx7bg.png"
-                alt="best seller dish"
+                alt="must try dish"
                 className="must-try-dish-img"
               />
             )}

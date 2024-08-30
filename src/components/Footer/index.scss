@@ -15,9 +15,23 @@
       width: 130px;
       margin-right: 20px;
       margin-bottom: 20px;
+      .footer-list-link {
+        text-decoration: none;
+        color: #000;
+      }
+      .footer-list-link:hover {
+        text-decoration: underline;
+      }
       .footer-social-media-container {
         display: flex;
         align-items: center;
+        .instagram-link {
+          text-decoration: none;
+          color: #000;
+        }
+        .instagram-link:hover {
+          text-decoration: underline;
+        }
         .footer-icons {
           margin-right: 15px;
         }

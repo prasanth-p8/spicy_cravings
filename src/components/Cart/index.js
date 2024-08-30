@@ -14,15 +14,17 @@ import "./index.scss";
 function Cart() {
   const { cart, setCart } = useContext(CartContext);
   const [orderResponse, setOrderResponse] = useState(false);
-  //const [orderPlacedAt, setOrderPlacedAt] = useState(new Date());
 
   const orderPlacedAt = new Date();
 
+  //date and time formatting using date-fns package
   const formatDate = format(orderPlacedAt, "LLL dd, yyyy");
   const formatTime = format(orderPlacedAt, "hh:mm bbb");
 
+  //getting user_details from localStorage to display username
   const { username } = JSON.parse(localStorage.getItem("user_details"));
 
+  //Math.floor and Math.random funciton used to generate random order number range from 2000 to 2999
   const randomOrderNumber = Math.floor(Math.random() * 1000) + 2000;
 
   //remove all items in the cart
@@ -59,6 +61,7 @@ function Cart() {
     }
   };
 
+  //opening and closing thank you order response popup card
   const toggleOrderResponse = () => {
     setOrderResponse(!orderResponse);
   };
@@ -133,12 +136,15 @@ function Cart() {
                       />
                       {mustTry === "Yes" && (
                         <img
-                          src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031825/must_try_dish_yzmjh9.png"
+                          title="best seller dish"
+                          src="https://res.cloudinary.com/dlefoxknm/image/upload/v1724785710/best_seller_heart_ktx7bg.png"
                           alt="must try dish"
                           className="must-try-dish-img"
                         />
                       )}
-                      <img src={imgUrl} alt={itemName} className="item-img" />
+                      <div className="item-img-container">
+                        <img src={imgUrl} alt={itemName} className="item-img" />
+                      </div>
                       <div className="cart-item-details-container">
                         <div className="cart-item-container">
                           <p className="cart-item-label">Item:</p>
@@ -155,22 +161,14 @@ function Cart() {
                               className="button quantity-button"
                               onClick={() => decreaseQuantityCart(id)}
                             >
-                              <img
-                                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031305/Item_Minus_Button_pnxxn7.png"
-                                alt="minus item button"
-                                className="quantity-item-button"
-                              />
+                              -
                             </button>
                             <p className="item-quantity">{quantity}</p>
                             <button
                               className="button quantity-button"
                               onClick={() => increaseQuantityCart(id)}
                             >
-                              <img
-                                src="https://res.cloudinary.com/dlefoxknm/image/upload/v1723031305/Item_Plus_Button_d3sa7k.png"
-                                alt="plus item button"
-                                className="quantity-item-button"
-                              />
+                              +
                             </button>
                           </div>
                         </div>

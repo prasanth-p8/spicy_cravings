@@ -15,15 +15,27 @@ function Footer() {
         </li>
         <li className="footer-nav-list">
           Useful links
-          <Link to="/about">About us</Link>
-          <Link to="/order-history">Order History</Link>
-          <Link to="profile">Profile</Link>
+          <Link to="/about" className="footer-list-link">
+            About us
+          </Link>
+          <Link to="/order-history" className="footer-list-link">
+            Order History
+          </Link>
+          <Link to="profile" className="footer-list-link">
+            Profile
+          </Link>
         </li>
         <li className="footer-nav-list">
           Main Menu
-          <Link to="/">Home</Link>
-          <Link to="/menu">Menu</Link>
-          <Link to="cart">Cart</Link>
+          <Link to="/" className="footer-list-link">
+            Home
+          </Link>
+          <Link to="/menu" className="footer-list-link">
+            Menu
+          </Link>
+          <Link to="cart" className="footer-list-link">
+            Cart
+          </Link>
         </li>
         <li className="footer-nav-list footer-conclusion">
           Contact Us
@@ -560,7 +572,10 @@ function Footer() {
                 </g>
               </svg>
             </div>
-            <a href="https://www.instagram.com/spicycravingspondy/">
+            <a
+              href="https://www.instagram.com/spicycravingspondy/"
+              className="instagram-link"
+            >
               Instagram
             </a>
           </div>
