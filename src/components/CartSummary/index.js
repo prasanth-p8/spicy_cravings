@@ -34,6 +34,7 @@ function CartSummary({ showOrderResponse }) {
   //final conformation for placing the order in the cart
   const placeTheOrder = () => {
     const orderPlacedSound = new Audio("/Assets/Audio/order-confirmed.mp3");
+    console.log(orderPlacedSound);
     orderPlacedSound.play();
     setOrderConformation(!orderConformation);
     showOrderResponse();
