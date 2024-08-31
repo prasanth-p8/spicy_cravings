@@ -28,6 +28,9 @@
     .about-section-description {
       font-size: 18px;
     }
+    .live-desc {
+      margin-top: 0;
+    }
 
     @media all and (min-width: 500px) {
       .about-image {
@@ -48,6 +51,9 @@
         font-size: 26px;
         max-width: 430px;
       }
+      .live-desc {
+        max-width: 80vw;
+      }
     }
     @media all and (min-width: 1100px) {
       .about-image {
@@ -59,6 +65,9 @@
       .about-section-description {
         font-size: 26px;
         max-width: 500px;
+      }
+      .live-desc {
+        max-width: 80vw;
       }
     }
   }

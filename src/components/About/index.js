@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
+import ReactPlayer from "react-player/youtube";
 
 import "./index.scss";
 
 function About() {
+  const ckLiveYoutubeLink = "https://youtu.be/rlD71i_X1tU";
   return (
     <>
       <Header />
@@ -67,6 +69,28 @@ function About() {
           <p className="about-section-description">
             So why wait? Give in to your cravings and order now! Let us take you
             on a culinary journey that will leave you wanting more.
+          </p>
+        </section>
+        <section className="about-section-container">
+          <ReactPlayer
+            url={ckLiveYoutubeLink}
+            controls
+            width="80vw"
+            height="70vh"
+          />
+          <h1 className="about-heading">
+            How to run a cloud kitchen business with delivery apps
+          </h1>
+          <p className="about-section-description live-desc">
+            In this live session, we explained how to run a cloud kitchen from
+            scratch to an intermediate level. We covered topics such as applying
+            for licenses, sourcing raw materials, reducing costs efficiently
+            when starting your business, delivery partner app deductions, and
+            approximate income and expenses in this business. We also addressed
+            some commonly asked questions. We hope this live session has cleared
+            some of your doubts. Feel free to reach out to us via WhatsApp,
+            Instagram, or email for any queries. Your suggestions and feedback
+            are always welcome.
           </p>
         </section>
         <Link to="/menu" className="home-navgivate-button about-order-button">
